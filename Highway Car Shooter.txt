@@ -1,0 +1,6 @@
+Name:Gourab Saha(Reg:2017831004)(Email:gourabsahag@gmail.com)
+     Moshiur Rahman Autul(Reg:2017831021)(Email:autul13@gmail.com) 
+
+(Game project Using SFML)
+                            Game Name:SHOOTING CARS
+Description:In this game a car will be controlled by the player which can shoot the vehicles coming towards it. It also can abandon the vehicles by moving in order to survive. Sometimes police cars(black color car) will appear.But police cars can not be shooted. Some vehicles will be able to shoot. If the car gets shoot then the game will be over. Moreover when the car gets hit by the vehicles then the game will be over. The difficulty level will increase after gaining certain points.  
