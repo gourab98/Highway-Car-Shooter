@@ -44,9 +44,9 @@ int main()
 
     float time=0.0f;
     Clock key;
-    Font style1,style2;
+    Font style1,style2,style3;
     double carX,carY,Obs1X, Obs1Y,Obs2X, Obs2Y,Obs3X, Obs3Y,Obs4X, Obs4Y;
-    Text scoretxt,gameovertxt,lifetxt,mgzntxt,gametxt,newgametxt,highscoretxt,leveltxt,helptxt,exittxt,loadgametxt,note;
+    Text scoretxt,lifetxt,mgzntxt,gametxt,newgametxt,highscoretxt,leveltxt,helptxt,exittxt,loadgametxt,note,gameovertxt;
     Texture backgroundTexture,carTexture,obs1Texture,obs2Texture,obs3Texture,obs4Texture,game_fornt,game_overTexture;
     SoundBuffer gameSound;
 
@@ -95,6 +95,13 @@ int main()
     note.setCharacterSize(50);
     note.setScale(0.7f,0.7f);
     note.setFillColor(Color::Green);
+
+    ///style3.loadFromFile("Fonts/Font3.ttf");
+    gameovertxt.setFont(style2);
+    gameovertxt.setString("GAME OVER!!! ");
+    gameovertxt.setCharacterSize(150);
+    gameovertxt.setScale(0.7f,0.7f);
+    gameovertxt.setFillColor(Color::Black);
 
 
     ///Set racer and Obs position
@@ -162,7 +169,6 @@ int main()
         helptxt.setPosition(700.f,440.f);
         exittxt.setPosition(700.f,520.f);
         note.setPosition(600.f,640.f);
-
 
         window.clear();
         game_front.setScale(1.f,1.f);
@@ -358,22 +364,22 @@ int main()
             }
 
             ///Check if accident happen
-        if (((carX>=(Obs1X-30)) &&(carX<=(Obs1X+30)))&&((carY>=(Obs1Y-30)) &&(carY)<=(Obs1Y+30)))
+        if (((carX>=(Obs1X-50)) &&(carX<=(Obs1X+50)))&&((carY>=(Obs1Y-109)) &&(carY)<=(Obs1Y+109)))
         {
             ///GameSound.stop();
             gameover=true;
         };
-        if (((carX>=(Obs2X-30)) &&(carX<=(Obs2X+30)))&&((carY>=(Obs2Y-30)) &&(carY)<=(Obs2Y+30)))
+        if (((carX>=(Obs2X-40)) &&(carX<=(Obs2X+40)))&&((carY>=(Obs2Y-80)) &&(carY)<=(Obs2Y+80)))
         {
             ///GameSound.stop();
             gameover=true;
         };
-        if (((carX>=(Obs3X-30)) &&(carX<=(Obs3X+30)))&&((carY>=(Obs3Y-30)) &&(carY)<=(Obs3Y+30)))
+        if (((carX>=(Obs3X-45)) &&(carX<=(Obs3X+45)))&&((carY>=(Obs3Y-133)) &&(carY)<=(Obs3Y+133)))
         {
             ///GameSound.stop();
             gameover=true;
         };
-        if (((carX>=(Obs4X-30)) &&(carX<=(Obs4X+30)))&&((carY>=(Obs4Y-30)) &&(carY)<=(Obs4Y+30)))
+        if (((carX>=(Obs4X-50)) &&(carX<=(Obs4X+50)))&&((carY>=(Obs4Y-109)) &&(carY)<=(Obs4Y+109)))
         {
             ///GameSound.stop();
             gameover=true;
@@ -390,19 +396,31 @@ int main()
         window.display();
      }
      if(gameover)
-     {   game=false;
+        {
+         game=false;
          menu=false;
        GameSound.stop();
 
+       gameovertxt.setPosition(13.f,2.f);
+
          window.draw(game_over);
+         window.draw(gameovertxt);
          window.display();
          if(Keyboard::isKeyPressed(Keyboard::Space))
         {
-           menu=true;
-           game=false;
-           gameover=false;
+    ///Set racer and Obs position
+    carX=SCREEN_WIDTH/2;
+    carY=SCREEN_HEIGH-carHeight;
+    Obs1X=getRandomNumber(borderLeft,borderRight);
+    Obs2X=getRandomNumber(borderLeft,borderRight);
+    Obs3X=getRandomNumber(borderLeft,borderRight);
+    Obs4X=getRandomNumber(borderLeft,borderRight);
+    Obs1Y=0,Obs2Y=-100,Obs3Y=-200,Obs4Y=-300;
+    GameSound.play();
+     menu=true;
         }
      }
     }
     return 0;
 }
+
