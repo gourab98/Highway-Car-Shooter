@@ -9,7 +9,7 @@
 
 ### About
 
-The project is about a game is called HighWay Car Shooter.In this game a car will be controlled by the player which can shoot the vehicles coming towards it. It also can abandon the vehicles by moving in order to survive. Sometimes police cars(black color car) will appear.But police cars can not be shooted. Some vehicles will be able to shoot. If the car gets shoot then the game will be over. Moreover when the car gets hit by the vehicles then the game will be over. The difficulty level will increase after gaining certain points.
+The project is about a game is called HighWay Car Shooter. In this game a car will be controlled by the player which can shoot the vehicles coming towards it. It also can abandon the vehicles by moving in order to survive. Sometimes police cars(black color car) will appear.But police cars can not be shooted. Some vehicles will be able to shoot. If the car gets shoot then the game will be over. Moreover when the car gets hit by the vehicles then the game will be over. The difficulty level will increase after gaining certain points.
 
 ### Resources:
 "C++"
