@@ -1,6 +1,6 @@
 # Highway Car Shooter(Project-150)
 
-### Project-2|SWE-1/2|Group-3
+### Project-2 |SWE-1/2| Group-3
 
 [Gourab Saha](https://github.com/Manstein2017831004)- 2017831004
 
